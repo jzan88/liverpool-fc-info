@@ -1,18 +1,19 @@
+// Placeholder-funktioner för att visa matcher och truppen. 
+// Dessa bör uppdateras med riktiga API-anrop.
 
-function displayMatches(data) {
+function displayMatches() {
     const matchesList = document.getElementById('matches-list');
-    data.matches.forEach(match => {
-        const li = document.createElement('li');
-        li.textContent = `${match.date} - ${match.team1} vs ${match.team2}`;
-        matchesList.appendChild(li);
-    });
+    // Ersätt detta med API-anrop och bearbetning av svar
+    matchesList.innerHTML = '<li>Match 1</li><li>Match 2</li>';
 }
 
-fetch('https://raw.githubusercontent.com/openfootball/football.json/master/2020-21/en.1.json')
-.then(response => response.json())
-.then(data => {
-    displayMatches(data);
-})
-.catch(error => {
-    console.error('Error fetching data: ', error);
+function displaySquad() {
+    const squadList = document.getElementById('squad-list');
+    // Ersätt detta med API-anrop och bearbetning av svar
+    squadList.innerHTML = '<li>Spelare 1</li><li>Spelare 2</li>';
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    displayMatches();
+    displaySquad();
 });
